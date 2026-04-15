@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  --color-bg: #E4E3E0;
+  --color-ink: #141414;
+  --color-line: #141414;
+  --color-accent: #F27D26;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-bg)] text-[var(--color-ink)] font-sans;
+  }
+}
+
+/* Technical Dashboard Recipe Styles */
+.data-row {
+  @apply grid grid-cols-[40px_1.5fr_1fr_1fr] p-4 border-b border-[var(--color-line)] transition-colors duration-200 cursor-pointer;
+}
+
+.data-row:hover {
+  @apply bg-[var(--color-ink)] text-[var(--color-bg)];
+}
+
+.col-header {
+  @apply font-serif italic text-[11px] opacity-50 uppercase tracking-wider;
+}
+
+.data-value {
+  @apply font-mono tracking-tight;
+}
+
+.enterprise-card {
+  @apply border border-[var(--color-line)] p-6 bg-white/50 backdrop-blur-sm;
+}
+
+.status-indicator {
+  @apply w-2 h-2 rounded-full inline-block mr-2;
+}
+
+.status-online {
+  @apply bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)];
+}
+
+.status-processing {
+  @apply bg-amber-500 animate-pulse;
+}
+
